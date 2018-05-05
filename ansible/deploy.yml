@@ -1,0 +1,7 @@
+---
+
+- hosts: aws
+  
+  roles:
+    - carlosbuenosvinos.ansistrano-deploy
+
