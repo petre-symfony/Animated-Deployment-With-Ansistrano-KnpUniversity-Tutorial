@@ -5,12 +5,17 @@
   vars_files:
     - ./vars/vars.yml
     
+  vars_prompt:
+    - name: git_branch
+      prompt: 'Enters a branch to deploy'
+      default: master
+      private: no
     
   vars:
     ansistrano_deploy_to: "{{ project_deploy_dir }}"
     ansistrano_deploy_via: git
     ansistrano_git_repo: https://github.com/petre-symfony/Animated-Deployment-With-Ansistrano-KnpUniversity-Tutorial.git
-    ansistrano_git_branch: master
+    ansistrano_git_branch: "{{ git_branch }}"
   
   roles:
     - carlosbuenosvinos.ansistrano-deploy
