@@ -20,7 +20,7 @@
         group: web-access-testing
         count: 1
         key_name: Ansible_AWS_tmp
-        region: us-east-2
+        region: us-east-2b
         instance_tags:
           Name: MooTube instance
       # Could be useful further to get Public IP, DNS, etc.
