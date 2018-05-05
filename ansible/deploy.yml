@@ -1,0 +1,26 @@
+---
+
+- hosts: aws
+
+  vars_files:
+    - ./vars/deploy_vault.yml
+    - ./vars/vars.yml
+    - ./vars/deploy_vars.yml
+    
+  vars_prompt:
+    - name: git_branch
+      prompt: 'Enters a branch to deploy'
+      default: master
+      private: no
+    
+  vars:
+    ansistrano_deploy_to: "{{ project_deploy_dir }}"
+    ansistrano_deploy_via: git
+    ansistrano_git_repo: git@github.com:petre-symfony/Animated-Deployment-With-Ansistrano-KnpUniversity-Tutorial.git
+    ansistrano_git_branch: "{{ git_branch }}"
+    ansistrano_git_identity_key_path: "{{ playbook_dir }}/id_rsa"
+    ansistrano_after_symlink_shared_tasks_file: "{{ playbook_dir }}/deploy/after-symlink-shared.yml"
+  
+  roles:
+    - carlosbuenosvinos.ansistrano-deploy
+
