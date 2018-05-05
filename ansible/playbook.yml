@@ -81,7 +81,7 @@
     - name: Set date.timezone for CLI
       become: true
       ini_file:
-        path: /etc/php/7.1/cli/php.ini
+        dest: /etc/php/7.1/cli/php.ini
         section: Date
         option: date.timezone
         value: UTC
@@ -89,7 +89,7 @@
     - name: Set date.timezone for FPM
       become: true
       ini_file:
-        path: /etc/php/7.1/fpm/php.ini
+        dest: /etc/php/7.1/fpm/php.ini
         section: Date
         option: date.timezone
         value: UTC
@@ -120,7 +120,7 @@
         working_dir: "/home/{{ ansible_user }}"
         command: self-update
       register: composer_self_update
-      changed_when: "not composer_self_update.stdout|search('You are already using composer version')"
+      changed_when: "not {{composer_self_update.msg|search('You are already using composer version')}} "
 
   post_tasks:
     - name: Upgrade installed packages
