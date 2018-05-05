@@ -1,0 +1,13 @@
+---
+
+- hosts: aws
+
+  vars:
+    ansistrano_deploy_to: "/var/www/project"
+    ansistrano_deploy_via: git
+    ansistrano_git_repo: https://github.com/petre-symfony/Animated-Deployment-With-Ansistrano-KnpUniversity-Tutorial.git
+    ansistrano_git_branch: master
+  
+  roles:
+    - carlosbuenosvinos.ansistrano-deploy
+
