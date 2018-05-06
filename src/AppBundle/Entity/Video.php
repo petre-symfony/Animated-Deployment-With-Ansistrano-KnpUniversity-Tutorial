@@ -31,7 +31,7 @@ class Video
      *
      * @ORM\Column(type="string", length=255)
      */
-    private $image;
+    private $poster;
 
     /**
      * @var array
