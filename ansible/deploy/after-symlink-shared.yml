@@ -23,4 +23,7 @@
     state: directory
     mode: 0777
     recurse: true
+    
+- name: Install bundle assets
+  command: "{{ release_var_path }} assets:install --symlink --env=prod"
   
