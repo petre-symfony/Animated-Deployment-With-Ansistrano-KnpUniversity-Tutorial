@@ -67,17 +67,17 @@ class Video
     /**
      * @return string
      */
-    public function getImage()
+    public function getPoster()
     {
-        return $this->image;
+        return $this->poster;
     }
 
     /**
-     * @param string $image
+     * @param string $poster
      */
-    public function setImage($image)
+    public function setPoster($image)
     {
-        $this->image = $image;
+        $this->poster = $poster;
     }
 
     /**
