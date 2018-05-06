@@ -14,6 +14,7 @@
       private: no
       
   vars:
+    release_console_path: "{{ ansistrano_release_path.stdout }}/bin/console"
     ansistrano_deploy_to: "{{ project_deploy_dir }}"
     ansistrano_deploy_via: git
     ansistrano_git_repo: git@github.com:petre-symfony/Animated-Deployment-With-Ansistrano-KnpUniversity-Tutorial.git
