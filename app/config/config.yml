@@ -22,8 +22,7 @@ framework:
     templating:
         engines: ['twig']
     default_locale:  "%locale%"
-    trusted_hosts:   ~
-    trusted_proxies: ~
+    trusted_hosts:  
     session:
         # use the default PHP session handler
         handler_id:  ~
