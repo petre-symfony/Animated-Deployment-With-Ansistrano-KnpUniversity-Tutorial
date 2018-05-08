@@ -75,6 +75,7 @@ jobs:
             - '/root/.ansible/roles'
 
       # @TODO Deploy to AWS here...
+      - run: ansible-playbook ansible/deploy.yml -i ansible/hosts.ini --ask-vault-pass
 
 workflows:
   version: 2
