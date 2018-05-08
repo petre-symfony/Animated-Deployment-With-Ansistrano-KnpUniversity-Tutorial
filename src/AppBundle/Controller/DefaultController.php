@@ -6,14 +6,16 @@ use AppBundle\Entity\Video;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Cache\Adapter\AdapterInterface;
+use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends Controller
 {
     /**
      * @Route("/", name="homepage")
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
+        $request->getClientIp();
         $videos = $this->getVideoRepository()
             ->findAll();
         $tags = $this->getUniqueOrderedTags($videos);
