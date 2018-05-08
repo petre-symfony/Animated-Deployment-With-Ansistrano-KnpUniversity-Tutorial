@@ -20,3 +20,4 @@
 /node_modules/
 /web/build
 /nbproject
+/ansible/.vault-pass.txt
