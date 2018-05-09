@@ -7,6 +7,7 @@
 
   vars:
     ansistrano_deploy_to: "{{ project_deploy_dir }}"
+    ansistrano_before_symlink_tasks_file: "{{ playbook_dir }}/rollback/before-symlink-tasks.yml"
   
   roles:
     - carlosbuenosvinos.ansistrano-rollback
