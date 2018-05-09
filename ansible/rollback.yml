@@ -1,0 +1,12 @@
+---
+
+- hosts: aws
+
+  vars_files:
+    - ./vars/vars.yml
+
+  vars:
+    ansistrano_deploy_to: "{{ project_deploy_dir }}"
+  
+  roles:
+    - carlosbuenosvinos.ansistrano-rollback
